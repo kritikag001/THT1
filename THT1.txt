@@ -1,0 +1,94 @@
+
+
+Question 1. 
+Fibonacci=function(n){
++     x=c(1,1)
++     for (i in 3:n) x[i] = x[i-1] + x[i-2]
++     return(x)
++ }
+ Fibonacci(7)
+> Fibonacci(18)
+
+Question 3.
+(a)	Read the data into R and name it dataset.
+
+1.	Download the spreadsheet, PersonenSchaden.csv and save it to a folder. 
+2.	Run the following code In R,
+dataset<- read.csv("D:\\ACST890\\PersonenSchaden.csv",header = TRUE)
+> summary(dataset)
+
+
+(b)	
+
+Answer: summary(total)
+ 
+Also to be more precise,
+For mean,
+mean(total)
+[1] 38367.22
+
+Variance,
+
+var(total)
+[1] 8277562110
+
+Standard deviation,
+
+sd(total)
+[1] 90981.11
+ 
+largest settled claim,
+max(total)
+[1] 4485797
+
+ The smallest,
+min(total)
+[1] 9.96
+
+The median,
+> median(total)
+[1] 13853.87
+
+The bottom quartile
+The top quartile
+quantile(total,c(0.25,0.75), type = 1)
+     25%      75% 
+ 6296.65 35122.17 
+
+(c)
+Answer:  since you have attached dataset by, attach(dataset)
+You can run the code, hist(total, breaks = 400,col = "blue")
+
+(d)	
+Define settelmet= finmonth-accmonth
+Settlement = finmonth-accmonth
+hist(Settlement,breaks=100, col="blue")
+ 
+(e)
+ HISTO=hist(legrep, yaxt="n", ylab = "percentage", freq = FALSE, seq(0,1,0.5))
+> HISTO$density = HISTO$counts/sum(HISTO$counts)*100
+ 
+>plot(HISTO,freq=FALSE, main = "Histogram of Legal Repersentation", ylab = "Percentage", xlab = "Legal Repersentation", ylim=c(0,100), xaxt = "n", text(x,0,1))
+
+(f)
+Define inj1, … inj5 to ne INJ
+> HISTOG=hist(INJ, yaxt="n", ylab = "percentage", freq = FALSE, seq(0,1,0.5))
+> HISTOG$density = HISTOG$counts/sum(HISTOG$counts)*100
+ 
+>plot(HISTOG,freq=FALSE, main = "Histogram of INJ", ylab = "Percentage", xlab = "INJ", ylim=c(0,100), xaxt = "n", text(x,0,1))
+
+(g)
+The histogram of total claims clearly shows the decreasing function wherein as the amount of  claims increase the frequency of people claiming it decreases. Similarly in the settlement delay as the claim amount increases the duration of the settlement delay automatically decreases. 
+
+(h)	
+Define Log dollar value of the claims as LDV and then plot the graph,
+LDV=log(total)
+hist(LDV, breaks = 100,col = "red")
+ 
+(i)
+plot(op_time,LDV)
+ 
+(j)	
+The graphs below are better fitted for the data. They show how the total claims change with the operational time. The scattering plot is suited better since it shoes the clustering in the range and is easy to interpret. The above histogram for log of total claims shows the frequency points but doesn’t make the interpretation clear.
+(k)	
+plot(op_time,LDV, col=”Green”)
